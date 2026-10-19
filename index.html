@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Edge Latency & Speed Benchmark Tool | Fervox Insights</title>
+    <meta name="description" content="Test and compare the raw streaming speed, Time-To-First-Token (TTFT), and latency of major AI models vs Fervox optimized edge pipelines.">
+    <link rel="stylesheet" href="speed-style.css">
+    
+    <!-- Google SEO Structured Data Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Fervox AI Speed Benchmarker",
+      "url": "https://vercel.app",
+      "description": "An interactive utility to measure real-time streaming token latency across different AI interfaces.",
+      "applicationCategory": "DeveloperApplication",
+      "browserRequirements": "Requires JavaScript. Requires user-provided API key for live streaming tests."
+    }
+    </script>
+</head>
+<body>
+
+    <!-- SPEED TEST CONTAINER -->
+    <main class="test-wrapper">
+        <header class="test-header">
+            <span class="badge">Live Diagnostic Engine</span>
+            <h1>AI Interface Speed Benchmark</h1>
+            <p>Measure raw Time-To-First-Token (TTFT) and token-per-second streaming velocities instantly.</p>
+        </header>
+
+        <!-- CONFIGURATION PANEL -->
+        <section class="config-card">
+            <div class="input-group">
+                <label for="provider-select">1. Select Target Endpoint</label>
+                <select id="provider-select">
+                    <option value="openai">OpenAI (GPT-6 Sol Endpoint)</option>
+                    <option value="gemini">Google (Gemini 4 Argon Node)</option>
+                    <option value="anthropic">Anthropic (Claude Mythos Core)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="api-key-input">2. Input Your API Key (Processed entirely client-side)</label>
+                <input type="password" id="api-key-input" placeholder="sk-..." autocomplete="off">
+            </div>
+
+            <button id="run-test-btn" class="action-btn">⚡ Initialize Speed Test</button>
+        </section>
+
+        <!-- LIVE METRICS METERS -->
+        <section class="metrics-grid">
+            <div class="metric-box status-inactive" id="fervox-metric">
+                <h3>🚀 Fervox Edge Pipeline</h3>
+                <div class="number-display"><span id="fervox-speed">0.0</span> <small>ms</small></div>
+                <p class="metric-label">Time-To-First-Token (TTFT)</p>
+                <div class="progress-bar-container">
+                    <div class="progress-fill" id="fervox-progress"></div>
+                </div>
+                <span class="badge-status success-badge">1.5x Acceleration Active</span>
+            </div>
+
+            <div class="metric-box status-inactive" id="standard-metric">
+                <h3>⏳ Standard Web Interface</h3>
+                <div class="number-display"><span id="standard-speed">0.0</span> <small>ms</small></div>
+                <p class="metric-label">Time-To-First-Token (TTFT)</p>
+                <div class="progress-bar-container">
+                    <div class="progress-fill" id="standard-progress"></div>
+                </div>
+                <span class="badge-status muted-badge">Throttled Layer Delay</span>
+            </div>
+        </section>
+
+        <!-- DIAGNOSTIC CONSOLE OUTPUT -->
+        <section class="console-card">
+            <h3>System Output Logs</h3>
+            <div id="console-logs" class="console-box">
+                <span class="log-line text-muted">[SYSTEM]: Diagnostic suite initialized. Awaiting API key input execution instructions...</span>
+            </div>
+        </section>
+
+        <!-- REDIRECT LINK TO PROOF PAGE -->
+        <div class="cta-container">
+            <p>Want to see the deep engineering layout behind why our edge connection dominates?</p>
+            <a href="index.html" class="cta-link">View Fervox AI vs The Giants Comparison Page →</a>
+        </div>
+    </main>
+
+    <script src="speed-script.js"></script>
+</body>
+</html>
