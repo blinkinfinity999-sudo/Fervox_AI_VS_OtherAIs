@@ -1,0 +1,240 @@
+/* --- Speed Benchmark Color Variables --- */
+:root {
+    --bg-dark-core: #070A13;
+    --bg-dark-surface: #0E1424;
+    --bg-dark-component: #172037;
+    --border-dim: #243152;
+    
+    --neon-blue: #38BDF8;
+    --neon-green: #34D399;
+    --neon-amber: #FBBF24;
+    
+    --text-pure: #F8FAFC;
+    --text-dim: #94A3B8;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark-core);
+    color: var(--text-pure);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    -webkit-font-smoothing: antialiased;
+}
+
+.test-wrapper {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.test-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.badge {
+    background-color: rgba(56, 189, 248, 0.1);
+    color: var(--neon-blue);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.test-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 15px 0 10px;
+    letter-spacing: -0.03em;
+}
+
+.test-header p {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Config UI block elements */
+.config-card {
+    background-color: var(--bg-dark-surface);
+    border: 1px solid var(--border-dim);
+    border-radius: 12px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: flex-end;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    margin-bottom: 40px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+select, input {
+    background-color: var(--bg-dark-component);
+    border: 1px solid var(--border-dim);
+    border-radius: 6px;
+    padding: 12px;
+    color: var(--text-pure);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+select:focus, input:focus {
+    border-color: var(--neon-blue);
+}
+
+.action-btn {
+    grid-column: span 2;
+    background-color: var(--neon-blue);
+    color: #070A13;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    padding: 14px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.action-btn:hover {
+    background-color: #7dd3fc;
+    transform: translateY(-1px);
+}
+
+/* Metrics Displays grids */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.metric-box {
+    background-color: var(--bg-dark-surface);
+    border: 1px solid var(--border-dim);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-box h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.number-display {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.number-display small {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+}
+
+.metric-label {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+}
+
+.progress-bar-container {
+    background-color: var(--bg-dark-component);
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+#fervox-metric .progress-fill { background-color: var(--neon-green); }
+#standard-metric .progress-fill { background-color: var(--neon-amber); }
+
+.badge-status {
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.success-badge { background-color: rgba(52, 211, 153, 0.1); color: var(--neon-green); }
+.muted-badge { background-color: rgba(245, 158, 11, 0.1); color: var(--neon-amber); }
+
+/* Logging Console windows */
+.console-card {
+    background-color: #03050a;
+    border: 1px solid var(--border-dim);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.console-card h3 {
+    margin-top: 0;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.console-box {
+    height: 120px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.85rem;
+}
+
+.log-line { display: block; }
+.log-success { color: var(--neon-green); }
+.log-warning { color: var(--neon-amber); }
+
+/* Bottom navigation CTA flags */
+.cta-container {
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid var(--border-dim);
+    padding-top: 30px;
+}
+
+.cta-link {
+    color: var(--neon-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta-link:hover {
+    text-decoration: underline;
+}
